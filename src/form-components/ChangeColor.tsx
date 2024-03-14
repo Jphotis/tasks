@@ -123,13 +123,17 @@ export function ChangeColor(): JSX.Element {
             </div>
             <div>
                 {colors.map((newColor: string) => (
-                    <Form.Check
-                        key={newColor}
-                        inline
-                        type="radio"
-                        name="emotions"
-                        onChange={updateColor}
-                        id={`color-check-${newColor}`}
+                    <>
+                        <Form.Check
+                            /*key={newColor}*/
+                            inline
+                            type="radio"
+                            name="emotions"
+                            onChange={updateColor}
+                            id={`color-check-${newColor}`}
+                            label={newColor}
+                            style={{ backgroundColor: newColor }}
+                            /*
                         label={`${(
                             <div>
                                 <span style={{ backgroundColor: newColor }}>
@@ -137,9 +141,11 @@ export function ChangeColor(): JSX.Element {
                                 </span>
                             </div>
                         )}`}
-                        value={`${newColor}`}
-                        checked={color === newColor}
-                    />
+                        */
+                            value={`${newColor}`}
+                            checked={color === newColor}
+                        />
+                    </>
                 ))}
             </div>
             <div>

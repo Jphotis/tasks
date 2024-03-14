@@ -25,7 +25,9 @@ export function MultipleChoiceQuestion({
                         onChange={updateCurrentChoice}
                     >
                         {options.map((currOption: string) => (
-                            <option value="happy">Happy</option>
+                            <option value={currOption} key={currOption}>
+                                {currOption}
+                            </option>
                         ))}
                     </Form.Select>
                 </Form.Group>
