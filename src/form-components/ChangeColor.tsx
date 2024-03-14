@@ -129,14 +129,27 @@ export function ChangeColor(): JSX.Element {
                         type="radio"
                         name="emotions"
                         onChange={updateColor}
-                        id={`emotion-check-${newColor}`}
-                        label={`${newColor}`}
+                        id={`color-check-${newColor}`}
+                        label={`${(
+                            <div>
+                                <span style={{ backgroundColor: newColor }}>
+                                    {newColor}
+                                </span>
+                            </div>
+                        )}`}
                         value={`${newColor}`}
                         checked={color === newColor}
                     />
                 ))}
-
-                <div>You have chosen {color}</div>
+            </div>
+            <div>
+                {"You have chosen "}
+                <span
+                    style={{ backgroundColor: color }}
+                    data-testid={"colored-box"}
+                >
+                    {color}
+                </span>
             </div>
         </div>
     );
